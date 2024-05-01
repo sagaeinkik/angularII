@@ -13,8 +13,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class CoursesComponent {
   courses: Kurs[] = [];
-  filterValue: string = '';
-  filteredCourses: Kurs[] = [];
 
   //Null variabel att lagra senaste sortering i
   latestSort: null | string = null;
@@ -25,16 +23,20 @@ export class CoursesComponent {
   ngOnInit() {
     this.courseService.getCourses().subscribe((kurs) => {
       this.courses = kurs;
-      console.log(this.courses);
     });
   }
   //Filtrering
 
+  filterValue: string = '';
+  filteredCourses: Kurs[] = [];
   /* PROBLEM!! filteredCourses verkar inte uppdateras av detta. Visar bara en tom array, skriver inte ut något till skärmen alls. Har följt Mattias video och vet inte vad det är jag gör fel nu. */
   filterCourses(): void {
-    this.filteredCourses = this.courses.filter((course) =>
-      course.coursename.toLowerCase().includes(this.filterValue.toLowerCase())
-    );
+    this.filteredCourses = this.courses.filter((kurs) => {
+      return kurs.coursename
+        .toLowerCase()
+        .includes(this.filterValue.toLowerCase());
+    });
+    console.log(this.filteredCourses); // Kontrollera temporär filtrerad lista
   }
 
   //Sortering
