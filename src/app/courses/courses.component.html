@@ -1,0 +1,17 @@
+<div class="filter">
+    <label for="search">Filtrera:</label>
+    <input type="search" name="search" id="search" [(ngModel)]="filterValue" (input)="filterCourses()">
+</div>
+
+<table>
+    <tr>
+        <th (click)="sortCourses('code')" title="Sortera enligt kurskod">Kurskod</th>
+        <th (click)="sortCourses('coursename')" title="Sortera enligt kursnamn">Kursnamn</th>
+        <th (click)="sortCourses('progression')" title="Sortera enligt progression">Progression</th>
+    </tr>
+    <tr *ngFor="let course of filteredCourses">
+        <td class="code">{{ course.code }}</td>
+        <td class=" name">{{ course.coursename }}</td>
+        <td class="progression">{{ course.progression }}</td>
+    </tr>
+</table>

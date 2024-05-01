@@ -1,0 +1,30 @@
+@use "../sass/assets" as a;
+
+h1 {
+  text-align: center;
+  margin: 2em 0 1em;
+  @include a.textGradient;
+}
+
+main {
+  background-color: a.$grey;
+}
+
+div.container {
+  max-width: 70%;
+  margin: auto;
+}
+
+footer {
+  text-align: center;
+  color: a.$color1;
+  padding: 1em;
+  margin-top: 4em;
+}
+
+//Media queries
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 3.5em;
+  }
+}
