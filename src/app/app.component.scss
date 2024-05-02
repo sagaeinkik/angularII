@@ -28,3 +28,20 @@ footer {
     font-size: 3.5em;
   }
 }
+
+@media (max-width: 1000px) {
+  div.container {
+    max-width: 90%;
+  }
+}
+@media (max-width: 400px) {
+  div.container {
+    max-width: 98%;
+  }
+}
+
+@media (max-width: 300px) {
+  div.container {
+    max-width: 100%;
+  }
+}

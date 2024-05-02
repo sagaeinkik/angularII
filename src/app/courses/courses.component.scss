@@ -3,10 +3,10 @@
 div.filter {
   text-align: center;
   margin-bottom: 4em;
-  @include a.textGradient;
 
   label {
     padding: 1em;
+    @include a.textGradient;
   }
   input {
     width: 600px;
@@ -16,11 +16,14 @@ div.filter {
     padding-left: 0.2em;
     font-size: 1em;
     font-family: a.$spacegrotesk;
-    //gradient-effekt
+    //gradient-effekt border
     border: none;
     border-bottom: 2px solid transparent;
     border-image: linear-gradient(150deg, a.$color1, a.$color2);
     border-image-slice: 1;
+    color: black;
+    //gradient-text
+    @include a.textGradient;
   }
 }
 
@@ -44,5 +47,37 @@ table {
   }
   td.code {
     text-transform: uppercase;
+  }
+}
+
+//media queries
+@media (max-width: 1000px) {
+  table {
+    width: 100%;
+  }
+  table td.progression {
+    text-align: center;
+  }
+}
+
+@media (max-width: 700px) {
+  table {
+    padding: 1em;
+    font-size: 0.8em;
+  }
+  table th:nth-child(2) {
+    padding-left: 0.5em;
+  }
+  table td {
+    padding-top: 1em;
+  }
+}
+
+@media (max-width: 450px) {
+  div.filter label {
+    display: block;
+  }
+  div.filter input {
+    max-width: 80%;
   }
 }
