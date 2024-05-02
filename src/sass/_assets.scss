@@ -9,6 +9,7 @@ $grey: #e7e9e8;
 $color1: #1f4f59;
 $color2: #b2b66a;
 
+//Textgradient mixin
 @mixin textGradient {
   background: linear-gradient(45deg, $color1, $color2);
   background: -webkit-linear-gradient(45deg, $color1, $color2);

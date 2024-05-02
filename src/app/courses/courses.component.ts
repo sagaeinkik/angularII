@@ -39,7 +39,6 @@ export class CoursesComponent {
     } else {
       this.filteredCourses = this.courses;
     }
-    console.log(this.filteredCourses);
   }
 
   //Sortering

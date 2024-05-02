@@ -1,14 +1,17 @@
 <div class="filter">
     <label for="search">Filtrera:</label>
+    <!-- Dubbel databindning för sökvärdet, eventlistener för input som kallar filterCourses -->
     <input type="search" name="search" id="search" [(ngModel)]="filterValue" (input)="filterCourses()">
 </div>
 
 <table>
     <tr>
+        <!-- Vid klick, anropa sortCourses med den egenskap som ska sorteras på -->
         <th (click)="sortCourses('code')" title="Sortera enligt kurskod">Kurskod</th>
         <th (click)="sortCourses('coursename')" title="Sortera enligt kursnamn">Kursnamn</th>
         <th (click)="sortCourses('progression')" title="Sortera enligt progression">Progression</th>
     </tr>
+    <!-- Loopa igenom filtrerade kurser, skriv ut till skärmen -->
     <tr *ngFor="let course of filteredCourses">
         <td class="code">{{ course.code }}</td>
         <td class=" name">{{ course.coursename }}</td>

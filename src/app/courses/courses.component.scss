@@ -1,13 +1,16 @@
 @use "../../sass/assets" as a;
 
+// input och label
 div.filter {
   text-align: center;
   margin-bottom: 4em;
 
   label {
     padding: 1em;
+    //applicera gradient på texten
     @include a.textGradient;
   }
+  //Sökfält
   input {
     width: 600px;
     max-width: 50%;
@@ -27,6 +30,7 @@ div.filter {
   }
 }
 
+//Tabellen
 table {
   background-image: linear-gradient(150deg, a.$color1, a.$color2);
   width: 90%;
@@ -37,12 +41,14 @@ table {
   border-spacing: 0;
 
   th {
+    //Rubrikerna
     text-align: left;
     font-size: 1.2em;
     border-bottom: 1px solid white;
     cursor: pointer;
   }
   td {
+    //Luft ovantill
     padding-top: 0.6em;
   }
   td.code {
@@ -50,7 +56,9 @@ table {
   }
 }
 
-//media queries
+/* Media queries */
+
+//1000px bredda tabell och sätt progression i mitten
 @media (max-width: 1000px) {
   table {
     width: 100%;
@@ -60,6 +68,7 @@ table {
   }
 }
 
+//700px minska padding, ge raderna mer luft upptill och Kursnamn-rubrik mer luft till vänster
 @media (max-width: 700px) {
   table {
     padding: 1em;
@@ -73,6 +82,7 @@ table {
   }
 }
 
+//450px gör label och inputfält till två rader, bredda fält
 @media (max-width: 450px) {
   div.filter label {
     display: block;
